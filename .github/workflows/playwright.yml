@@ -29,7 +29,7 @@ jobs:
           ref: gh-pages
           path: gh-pages
       - name: Allure Report Action
-        uses: simple-elf/allure-report-action@v1.9
+        uses: simple-elf/allure-report-action
         if: always()
         with:
           allure_results: allure-results
