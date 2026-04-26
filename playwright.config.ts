@@ -15,7 +15,7 @@ export default defineConfig({
   testDir: './tests',
   timeout: 30000,      // 30 seconds per test
   retries: 1,          // retry once on failure
-  reporter: [['html'], ['list']],
+  reporter: [['html'], ['allure-playwright']],
   use: {
     extraHTTPHeaders: {
       'Content-Type': 'application/json',

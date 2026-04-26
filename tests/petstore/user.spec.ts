@@ -8,7 +8,7 @@ test.describe('Pet Store - User API', () => {
     userService = new UserService(request);
   });
 
-  test.only('Create a new user', async () => {
+  test('Create a new user', async () => {
     const response = await userService.createUser({
       id: 10001,
       username: 'johndoe_test',
