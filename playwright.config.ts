@@ -16,22 +16,38 @@ export default defineConfig({
   timeout: 30000,      // 30 seconds per test
   retries: 1,          // retry once on failure
   reporter: [['html'], ['allure-playwright']],
-  use: {
-    extraHTTPHeaders: {
-      'Content-Type': 'application/json',
-      'Accept': 'application/json',
-    },
-  },
   projects: [
     {
       name: 'DummyJSON API',
       testMatch: 'tests/dummyjson/**/*.spec.ts',
-      use: { baseURL: 'https://dummyjson.com' },
+      use: {
+        baseURL: 'https://dummyjson.com',
+        extraHTTPHeaders: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      },
     },
     {
       name: 'Pet Store API',
       testMatch: 'tests/petstore/**/*.spec.ts',
-      use: { baseURL: 'https://petstore.swagger.io' },
+      use: {
+        baseURL: 'https://petstore.swagger.io',
+        extraHTTPHeaders: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      },
+    },
+    {
+      name: 'Sauce Demo',
+      testMatch: 'tests/sauce-demo/**/*.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
+    },
+    {
+      name: 'Coffee Cart',
+      testMatch: 'tests/coffee-cart/**/*.spec.ts',
+      use: { ...devices['Desktop Chrome'] },
     },
   ],
 });
