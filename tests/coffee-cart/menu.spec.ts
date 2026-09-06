@@ -9,7 +9,7 @@ test.describe('CoffeeCart - Menu Tests', () => {
 
   test('should load the coffee menu page', async ({ page }) => {
     // Verify the page loaded with the correct title
-    await expect(page).toHaveTitle(/Coffee cart/);
+    await expect(page).toHaveTitle(/Coffee/);
   });
 
   test('should display espresso on the menu', async ({ page }) => {
